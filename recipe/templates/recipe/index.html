@@ -5,6 +5,20 @@ Cookbook
 {% block navtitle %} The Cookbook {% endblock %}
 {% block content %}
 <div id="cover">
+	<div class="logo">
+		<h1>
+			COOKBOOK
+		</h1>
+	</div>
 </div>
 
+<script>
+	$( "#cover" ).click(function() {
+		$('#cover').animate({
+			marginTop: "-=100%",
+		}, 600, function(){
+			$('#cover').hide()
+		});
+	});
+</script>
 {% endblock %}
