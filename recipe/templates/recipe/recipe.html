@@ -18,7 +18,14 @@ Cookbook
 <div id="main" class="container body-margin">
 	<div class="section">
 		{% for step in steps %}
-			<div class="slide" data-anchor="slide{{forloop.counter}}"> <p class="text-center"> {{step.details}} </p> </div>
+			<div class="slide" data-anchor="slide{{forloop.counter}}"> 
+				<div class="text-center">
+				<p class="text-center"> {{step.details}} </p> 
+				{% if step.avatar %}
+					<img src="{{MEDIA_URL}}{{recipe.avatar}}"/>
+				{% endif %}
+				</div>
+			</div>
 		{% endfor %}
 	</div>
 
