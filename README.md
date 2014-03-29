@@ -9,3 +9,4 @@ TODO
 ====
 - ~~simple bootstrap page~~
 - ~~leapstrap~~
+- test leapstrap swipe function
