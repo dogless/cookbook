@@ -5,6 +5,16 @@ from recipe.models import Recipe, Step
 def index(request):
 	return render(request, 'recipe/index.html')
 
+def search(request):
+	context = {'recipes' : []}
+	if 'q' in request.GET and request.GET['q']:
+		q = request.GET['q']
+		recipes = Recipe.objects.filter(name__icontains=q)
+		context = {
+			'recipes': recipes
+		}
+	return render(request, 'recipe/search.html', context)
+
 def test(request):
 	recipe = Recipe.objects.get(name="pbj")
 	steps = recipe.step_set.all()

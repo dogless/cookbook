@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+Cookbook: Search Results
+{% endblock %}
+{% block content %}
+<div id="main" class="container body-margin">
+	<form action="/search/" method="get">
+		<input type="text" name="q">
+		<input type="submit" value="Search">
+	</form>
+	{% for recipe in recipes %}
+		<p>{{ recipe.name }}</p>
+	{% endfor %}
+</div>
+{% endblock %}
