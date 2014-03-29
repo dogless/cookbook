@@ -3,19 +3,19 @@
 Cookbook
 {% endblock %}
 {% block content %}
-i<div id="main">
-<button id="pause" onclick="togglePause()">Pause</button>
-<input type="checkbox" id="pauseOnGesture" onclick="pauseForGestures()">Pause on gesture</input>
-<h3>Frame data:</h3>
-<div id="frameData"></div>
-<div style="clear:both;"></div>
-<h3>Hand data:</h3>
-<div id="handData"></div>
-<div style="clear:both;"></div>
-<h3>Finger and tool data:</h3>
-<div id="pointableData"></div>
-<div style="clear:both;"></div>
-<h3>Gesture data:</h3>
-<div id="gestureData"></div>
+<div id="main" class="container body-margin">
+	<button id="pause" onclick="togglePause()">Pause</button>
+	<input type="checkbox" id="pauseOnGesture" onclick="pauseForGestures()">Pause on gesture</input>
+	<h3>Frame data:</h3>
+		<div id="frameData"></div>
+		<div style="clear:both;"></div>
+	<h3>Hand data:</h3>
+		<div id="handData"></div>
+		<div style="clear:both;"></div>
+	<h3>Finger and tool data:</h3>
+		<div id="pointableData"></div>
+		<div style="clear:both;"></div>
+	<h3>Gesture data:</h3>
+		<div id="gestureData"></div>
 </div>
 {% endblock %}
