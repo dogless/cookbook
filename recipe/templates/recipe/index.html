@@ -1,14 +1,36 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block title %}
 Cookbook
 {% endblock %}
 {% block navtitle %} The Cookbook {% endblock %}
+
+{% block extraheaders %}
+	<link href="{% static "css/index.css" %}" rel="stylesheet" media="screen">
+	<script src="{% static "js/index.js" %}"></script>
+{% endblock %}
+
 {% block content %}
 <div id="cover">
 	<div class="logo">
 		<h1>
 			COOKBOOK
 		</h1>
+	</div>
+</div>
+<div id="main" class="container body-margin">
+	<div class="row">
+		<div class="col-md-12">	
+			<ul id="recipes">
+				{% for recipe in recipes %}
+					<li {% if forloop.first %}class="active"{% endif %} value="{{recipe.id}}"> 
+						<div>
+							<p>{{recipe.name}}</p>
+						</div>
+					</li>
+				{% endfor %}	
+			</ul>
+		</div>
 	</div>
 </div>
 

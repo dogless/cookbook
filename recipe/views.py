@@ -3,7 +3,12 @@ from recipe.models import Recipe, Step
 
 # Create your views here.
 def index(request):
-	return render(request, 'recipe/index.html')
+	recipes = Recipe.objects.all()
+
+	context = {
+		'recipes': recipes,
+	}
+	return render(request, 'recipe/index.html', context)
 
 def search(request):
 	context = {'recipes' : []}

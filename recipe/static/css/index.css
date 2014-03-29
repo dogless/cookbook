@@ -1,7 +1,8 @@
 body{
 	font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
 	-webkit-text-size-adjust:100%;
-	-ms-text-size-adjust:100%
+	-ms-text-size-adjust:100%;
+	background:gray;
 }
 
 #cover{
@@ -29,5 +30,27 @@ body{
 }
 
 .body-margin{
-	margin-top: 100px;
+	padding-top: 100px;
+}
+
+#recipes{
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+#recipes li {
+	list-style-type: none;
+	position: relative;
+	float: left;
+	width:20%;
+}
+
+#recipes li div {
+	margin: 5px;
+	height:225px;
+	background:green;
+}
+
+.active {
+	background:yellow;
 }
