@@ -1,0 +1,15 @@
+{% load staticfiles %}
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css/" %}">
+		{% block extraheaders %} {% endblock %}
+		<title> {% block title %} {% endblock %} </title>
+	</head>
+	<body>
+		{% block content %} {% endblock %}
+	<body>
+	<!--
+	<script type="text/javascript" src="{% static "js/" %}"></script>
+	-->
+</html>
