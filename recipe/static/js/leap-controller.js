@@ -95,37 +95,37 @@ Leap.loop(controllerOptions, function(frame) {
   // }
   // handOutput.innerHTML = handString;
 
-  // // Display Pointable (finger and tool) object data
-  // var pointableOutput = document.getElementById("pointableData");
-  // var pointableString = "";
-  // if (frame.pointables.length > 0) {
-  //   for (var i = 0; i < frame.pointables.length; i++) {
-  //     var pointable = frame.pointables[i];
+  // Display Pointable (finger and tool) object data
+  var pointableOutput = document.getElementById("pointableData");
+  var pointableString = "";
+  if (frame.pointables.length > 0) {
+    for (var i = 0; i < frame.pointables.length; i++) {
+      var pointable = frame.pointables[i];
 
-  //     pointableString += "<div style='width:250px; float:left; padding:5px'>";
-  //     pointableString += "Pointable ID: " + pointable.id + "<br />";
-  //     pointableString += "Belongs to hand with ID: " + pointable.handId + "<br />";
+      pointableString += "<div style='width:250px; float:left; padding:5px'>";
+      pointableString += "Pointable ID: " + pointable.id + "<br />";
+      pointableString += "Belongs to hand with ID: " + pointable.handId + "<br />";
 
-  //     if (pointable.tool) {
-  //       pointableString += "Classified as a tool <br />";
-  //       pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
-  //       pointableString += "Width: "  + pointable.width.toFixed(1) + " mm<br />";
-  //     }
-  //     else {
-  //       pointableString += "Classified as a finger<br />";
-  //       pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
-  //     }
+      if (pointable.tool) {
+        pointableString += "Classified as a tool <br />";
+        pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
+        pointableString += "Width: "  + pointable.width.toFixed(1) + " mm<br />";
+      }
+      else {
+        pointableString += "Classified as a finger<br />";
+        pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
+      }
 
-  //     pointableString += "Direction: " + vectorToString(pointable.direction, 2) + "<br />";
-  //     pointableString += "Tip position: " + vectorToString(pointable.tipPosition) + " mm<br />";
-  //     pointableString += "Tip velocity: " + vectorToString(pointable.tipVelocity) + " mm/s<br />";
+      pointableString += "Direction: " + vectorToString(pointable.direction, 2) + "<br />";
+      pointableString += "Tip position: " + vectorToString(pointable.tipPosition) + " mm<br />";
+      pointableString += "Tip velocity: " + vectorToString(pointable.tipVelocity) + " mm/s<br />";
 
-  //     pointableString += "</div>";
-  //   }
-  // }
-  // else {
-  //   pointableString += "<div>No pointables</div>";
-  // }
+      pointableString += "</div>";
+    }
+  }
+  else {
+    pointableString += "<div>No pointables</div>";
+  }
   // pointableOutput.innerHTML = pointableString;
 
   // Display Gesture object data
@@ -172,6 +172,7 @@ Leap.loop(controllerOptions, function(frame) {
           break;
         case "screenTap":
         case "keyTap":
+          console.log('point');
           gestureString += "position: " + vectorToString(gesture.position) + " mm, "
                         + "direction: " + vectorToString(gesture.direction, 2);
           break;
