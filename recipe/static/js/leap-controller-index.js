@@ -144,6 +144,7 @@ Leap.loop(controllerOptions, function(frame) {
                     + "pointable IDs: " + gesture.pointableIds.join(", ") + ", "
                     + "duration: " + gesture.duration + " &micro;s, ";
 
+
       switch (gesture.type) {
         case "circle":
           gestureString += "center: " + vectorToString(gesture.center) + " mm, "
@@ -160,11 +161,13 @@ Leap.loop(controllerOptions, function(frame) {
                 if(gesture.direction[0] > 0){
                   console.log('right');
                   moveActiveRight();
+                  setTimeout(1000);
                   break;
                 }
                 else{
                   console.log('left');
                   moveActiveLeft();
+                  setTimeout(1000);
                   break;
                 }
             }
@@ -177,11 +180,13 @@ Leap.loop(controllerOptions, function(frame) {
                   $('#cover').hide()
                 });  
                 moveActiveUp();
+                setTimeout(1000);
                 break;
               }
               else{
                 console.log('down');
                 moveActiveDown();
+                setTimeout(1000);
                 break;
               }
             }
@@ -193,9 +198,10 @@ Leap.loop(controllerOptions, function(frame) {
                         + "speed: " + gesture.speed.toFixed(1) + " mm/s";
           break;
         case "screenTap":
-        case "keyTap":
-          console.log('point');
+          console.log('tap');
           openRecipe();
+          break;
+        case "keyTap":
           gestureString += "position: " + vectorToString(gesture.position) + " mm, "
                         + "direction: " + vectorToString(gesture.direction, 2);
           break;
