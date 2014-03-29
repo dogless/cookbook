@@ -38,16 +38,22 @@
 				</div><!--/.navbar-collapse -->
 			</div>
 		</div>
+		<form id="search" action="/search/" method="get">
+			<input id="search-text" type="text" name="q">
+			<input type="submit" value="Search">
+		</form>
 		{% block content %} {% endblock %}
 		<script type="text/javascript" src="{% static "js/annyang.min.js" %}"></script>
 		<script>
 
 		var banana = function(){
-			alert('banana');
+			console.log('banana');
 		}
 
 		var search = function(query){
-			alert(query);
+			console.log(query);
+			$('#search-text').val(query);
+			$('#search').submit();
 		}
 
 		if (annyang) {
