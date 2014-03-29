@@ -1,4 +1,23 @@
 .body-margin{
 	margin-top: 100px;
+}
 
+body{
+	background:gray;
+}
+
+#recipes{
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+#recipes li {
+	width:33%;
+	list-style-type: none;
+	position: relative;
+	float: left;
+}
+
+.active {
+	background:yellow;
 }

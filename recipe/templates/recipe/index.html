@@ -5,5 +5,18 @@ Cookbook
 {% block navtitle %} The Cookbook {% endblock %}
 {% block content %}
 <div id="main" class="container body-margin">
+	<div class="row">
+		<div class="col-md-9 col-md-offset-2">	
+			<ul id="recipes">
+				{% for recipe in recipes %}
+					{% if forloop.first %}
+						<li class="active"> {{recipe.name}} </li>
+					{% else %}
+						<li> {{recipe.name}} </li>
+					{% endif %}
+				{% endfor %}	
+			</ul>
+		</div>
+	</div>
 </div>
 {% endblock %}
