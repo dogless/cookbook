@@ -44,6 +44,8 @@ body{
 }
 
 #recipes{
+	margin:0;
+	padding:9;
 	margin-bottom: 30px;
 	overflow: hidden;
 }
@@ -60,6 +62,11 @@ body{
 	margin: 10px;
 	height:250px;
 	background-color: rgb(56, 56, 56);
+}
+
+.wrapper{
+	margin:auto;
+	width:90%;
 }
 
 #recipes li p {
