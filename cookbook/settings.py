@@ -74,7 +74,7 @@ else:
     import dj_database_url
     DATABASES['default'] = dj_database_url.config(default='postgres://a:a@localhost/cookbook')
     if isHeroku is not None:
-        DEBUG = False
+        DEBUG = True
 # Internationalization # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
