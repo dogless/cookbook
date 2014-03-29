@@ -143,57 +143,36 @@ Leap.loop(controllerOptions, function(frame) {
 		case "swipe":
 		  var xDirection = Math.abs(gesture.direction[0]);
 		  var yDirection = Math.abs(gesture.direction[1]);
-		  
 		  if(gesture.state === 'stop'){
 			if (xDirection > 0.5){
 				if(gesture.direction[0] > 0){
-					if (!$("#cover").is(":visible")){
-						console.log('right');
-						moveActiveRight();
-						setTimeout(1000);
-					}
+					console.log('right');
+					moveActiveRight();
 					break;
 				}
 				else{
-					if (!$("#cover").is(":visible")){
-						console.log('left');
-						moveActiveLeft();
-						setTimeout(1000);
-					}
+					console.log('left');
+					moveActiveLeft();
 					break;
 				}
 			}
 			if (yDirection > 0.5){
 			  if(gesture.direction[1] > 0){
 					console.log('up');
-					$('#cover').animate({
-						marginTop: "-=100%",
-					}, 600, function(){
-						$('#cover').hide()
-					});  
-					if (!$("#cover").is(":visible")){
-						moveActiveUp();
-						setTimeout(1000);
-					} // true or false
-
+					moveActiveUp();
 					break;
 			  }
 			  else{
-				if (!$("#cover").is(":visible")){
-					console.log('down');
-					moveActiveDown();
-					setTimeout(1000);
-				}
+				console.log('down');
+				moveActiveDown();
 				break;
 			  }
 			}
 		  }
 		  break;
 		case "screenTap":
-			if (!$("#cover").is(":visible")){
-				console.log('tap');
-				openRecipe();
-			}
+			console.log('tap');
+			openRecipe();
 			break;
 		case "keyTap":
 		  break;
