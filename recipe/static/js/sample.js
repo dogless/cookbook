@@ -11,30 +11,30 @@ Leap.loop(controllerOptions, function(frame) {
     return; // Skip this update
   }
 
-  // Display Frame object data
-  var frameOutput = document.getElementById("frameData");
+  // // Display Frame object data
+  // var frameOutput = document.getElementById("frameData");
 
-  var frameString = "Frame ID: " + frame.id  + "<br />"
-                  + "Timestamp: " + frame.timestamp + " &micro;s<br />"
-                  + "Hands: " + frame.hands.length + "<br />"
-                  + "Fingers: " + frame.fingers.length + "<br />"
-                  + "Tools: " + frame.tools.length + "<br />"
-                  + "Gestures: " + frame.gestures.length + "<br />";
+  // var frameString = "Frame ID: " + frame.id  + "<br />"
+  //                 + "Timestamp: " + frame.timestamp + " &micro;s<br />"
+  //                 + "Hands: " + frame.hands.length + "<br />"
+  //                 + "Fingers: " + frame.fingers.length + "<br />"
+  //                 + "Tools: " + frame.tools.length + "<br />"
+  //                 + "Gestures: " + frame.gestures.length + "<br />";
 
-  // Frame motion factors
-  if (previousFrame && previousFrame.valid) {
-    var translation = frame.translation(previousFrame);
-    frameString += "Translation: " + vectorToString(translation) + " mm <br />";
+  // // Frame motion factors
+  // if (previousFrame && previousFrame.valid) {
+  //   var translation = frame.translation(previousFrame);
+  //   frameString += "Translation: " + vectorToString(translation) + " mm <br />";
 
-    var rotationAxis = frame.rotationAxis(previousFrame);
-    var rotationAngle = frame.rotationAngle(previousFrame);
-    frameString += "Rotation axis: " + vectorToString(rotationAxis, 2) + "<br />";
-    frameString += "Rotation angle: " + rotationAngle.toFixed(2) + " radians<br />";
+  //   var rotationAxis = frame.rotationAxis(previousFrame);
+  //   var rotationAngle = frame.rotationAngle(previousFrame);
+  //   frameString += "Rotation axis: " + vectorToString(rotationAxis, 2) + "<br />";
+  //   frameString += "Rotation angle: " + rotationAngle.toFixed(2) + " radians<br />";
 
-    var scaleFactor = frame.scaleFactor(previousFrame);
-    frameString += "Scale factor: " + scaleFactor.toFixed(2) + "<br />";
-  }
-  frameOutput.innerHTML = "<div style='width:300px; float:left; padding:5px'>" + frameString + "</div>";
+  //   var scaleFactor = frame.scaleFactor(previousFrame);
+  //   frameString += "Scale factor: " + scaleFactor.toFixed(2) + "<br />";
+  // }
+  // frameOutput.innerHTML = "<div style='width:300px; float:left; padding:5px'>" + frameString + "</div>";
 
   // // Display Hand object data
   // var handOutput = document.getElementById("handData");
@@ -155,14 +155,18 @@ Leap.loop(controllerOptions, function(frame) {
           var xDirection = Math.abs(gesture.direction[0]);
           if (xDirection > 0.5){
               if(gesture.direction[0] > 0){
-                console.log('right swipe');
+                console.log('right');
+                $('.section.active').find('.controlArrow.next:visible').trigger('click');
+                break;
               }
               else{
-                console.log('left swipe');
+                console.log('left');
+                $('.section.active').find('.controlArrow.prev:visible').trigger('click');
+                break;
               }
           }
           gestureString += "start position: " + vectorToString(gesture.startPosition) + " mm, "
-                        + "current position: " + vectorToString(gesture.position) + " mm, "
+                        // + "current position: " + vectorToString(gesture.position) + " mm, "
                         + "direction: " + vectorToString(gesture.direction, 2) + ", "
                         + "speed: " + gesture.speed.toFixed(1) + " mm/s";
           break;
@@ -180,10 +184,10 @@ Leap.loop(controllerOptions, function(frame) {
   else {
     gestureString += "No gestures";
   }
-  gestureOutput.innerHTML = gestureString;
+  // gestureOutput.innerHTML = gestureString;
 
   // Store frame for motion functions
-  previousFrame = frame;
+  // previousFrame = frame;
 })
 
 function vectorToString(vector, digits) {
