@@ -8,7 +8,7 @@ var controllerOptions = {enableGestures: true};
 
 Leap.loop(controllerOptions, function(frame) {
   if (paused) {
-    return; // Skip this update
+	return; // Skip this update
   }
 
   // // Display Frame object data
@@ -99,32 +99,32 @@ Leap.loop(controllerOptions, function(frame) {
   var pointableOutput = document.getElementById("pointableData");
   var pointableString = "";
   if (frame.pointables.length > 0) {
-    for (var i = 0; i < frame.pointables.length; i++) {
-      var pointable = frame.pointables[i];
+	for (var i = 0; i < frame.pointables.length; i++) {
+	  var pointable = frame.pointables[i];
 
-      pointableString += "<div style='width:250px; float:left; padding:5px'>";
-      pointableString += "Pointable ID: " + pointable.id + "<br />";
-      pointableString += "Belongs to hand with ID: " + pointable.handId + "<br />";
+	  pointableString += "<div style='width:250px; float:left; padding:5px'>";
+	  pointableString += "Pointable ID: " + pointable.id + "<br />";
+	  pointableString += "Belongs to hand with ID: " + pointable.handId + "<br />";
 
-      if (pointable.tool) {
-        pointableString += "Classified as a tool <br />";
-        pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
-        pointableString += "Width: "  + pointable.width.toFixed(1) + " mm<br />";
-      }
-      else {
-        pointableString += "Classified as a finger<br />";
-        pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
-      }
+	  if (pointable.tool) {
+		pointableString += "Classified as a tool <br />";
+		pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
+		pointableString += "Width: "  + pointable.width.toFixed(1) + " mm<br />";
+	  }
+	  else {
+		pointableString += "Classified as a finger<br />";
+		pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
+	  }
 
-      pointableString += "Direction: " + vectorToString(pointable.direction, 2) + "<br />";
-      pointableString += "Tip position: " + vectorToString(pointable.tipPosition) + " mm<br />";
-      pointableString += "Tip velocity: " + vectorToString(pointable.tipVelocity) + " mm/s<br />";
+	  pointableString += "Direction: " + vectorToString(pointable.direction, 2) + "<br />";
+	  pointableString += "Tip position: " + vectorToString(pointable.tipPosition) + " mm<br />";
+	  pointableString += "Tip velocity: " + vectorToString(pointable.tipVelocity) + " mm/s<br />";
 
-      pointableString += "</div>";
-    }
+	  pointableString += "</div>";
+	}
   }
   else {
-    pointableString += "<div>No pointables</div>";
+	pointableString += "<div>No pointables</div>";
   }
   // pointableOutput.innerHTML = pointableString;
 
@@ -132,87 +132,73 @@ Leap.loop(controllerOptions, function(frame) {
   var gestureOutput = document.getElementById("gestureData");
   var gestureString = "";
   if (frame.gestures.length > 0) {
-    if (pauseOnGesture) {
-      togglePause();
-    }
-    for (var i = 0; i < frame.gestures.length; i++) {
-      var gesture = frame.gestures[i];
-      gestureString += "Gesture ID: " + gesture.id + ", "
-                    + "type: " + gesture.type + ", "
-                    + "state: " + gesture.state + ", "
-                    + "hand IDs: " + gesture.handIds.join(", ") + ", "
-                    + "pointable IDs: " + gesture.pointableIds.join(", ") + ", "
-                    + "duration: " + gesture.duration + " &micro;s, ";
+	if (pauseOnGesture) {
+	  togglePause();
+	}
+	for (var i = 0; i < frame.gestures.length; i++) {
+	  var gesture = frame.gestures[i];
+	  switch (gesture.type) {
+		case "circle":
+		  break;
+		case "swipe":
+		  var xDirection = Math.abs(gesture.direction[0]);
+		  var yDirection = Math.abs(gesture.direction[1]);
+		  
+		  if(gesture.state === 'stop'){
+			if (xDirection > 0.5){
+				if(gesture.direction[0] > 0){
+					if (!$("#cover").is(":visible")){
+						console.log('right');
+						moveActiveRight();
+						setTimeout(1000);
+					}
+					break;
+				}
+				else{
+					if (!$("#cover").is(":visible")){
+						console.log('left');
+						moveActiveLeft();
+						setTimeout(1000);
+					}
+					break;
+				}
+			}
+			if (yDirection > 0.5){
+			  if(gesture.direction[1] > 0){
+					console.log('up');
+					$('#cover').animate({
+						marginTop: "-=100%",
+					}, 600, function(){
+						$('#cover').hide()
+					});  
+					if (!$("#cover").is(":visible")){
+						moveActiveUp();
+						setTimeout(1000);
+					} // true or false
 
-
-      switch (gesture.type) {
-        case "circle":
-          gestureString += "center: " + vectorToString(gesture.center) + " mm, "
-                        + "normal: " + vectorToString(gesture.normal, 2) + ", "
-                        + "radius: " + gesture.radius.toFixed(1) + " mm, "
-                        + "progress: " + gesture.progress.toFixed(2) + " rotations";
-          break;
-        case "swipe":
-          var xDirection = Math.abs(gesture.direction[0]);
-          var yDirection = Math.abs(gesture.direction[1]);
-          
-          if(gesture.state === 'stop'){
-            if (xDirection > 0.5){
-                if(gesture.direction[0] > 0){
-                  console.log('right');
-                  moveActiveRight();
-                  setTimeout(1000);
-                  break;
-                }
-                else{
-                  console.log('left');
-                  moveActiveLeft();
-                  setTimeout(1000);
-                  break;
-                }
-            }
-            if (yDirection > 0.5){
-              if(gesture.direction[1] > 0){
-                console.log('up');
-                $('#cover').animate({
-                  marginTop: "-=100%",
-                }, 600, function(){
-                  $('#cover').hide()
-                });  
-                moveActiveUp();
-                setTimeout(1000);
-                break;
-              }
-              else{
-                console.log('down');
-                moveActiveDown();
-                setTimeout(1000);
-                break;
-              }
-            }
-          }
-
-          gestureString += "start position: " + vectorToString(gesture.startPosition) + " mm, "
-                        // + "current position: " + vectorToString(gesture.position) + " mm, "
-                        + "direction: " + vectorToString(gesture.direction, 2) + ", "
-                        + "speed: " + gesture.speed.toFixed(1) + " mm/s";
-          break;
-        case "screenTap":
-          console.log('tap');
-          openRecipe();
-          break;
-        case "keyTap":
-          gestureString += "position: " + vectorToString(gesture.position) + " mm, "
-                        + "direction: " + vectorToString(gesture.direction, 2);
-          break;
-        default:
-          gestureString += "unkown gesture type";
-      }
-      gestureString += "<br />";
-    }
-  }
-  else {
-    gestureString += "No gestures";
+					break;
+			  }
+			  else{
+				if (!$("#cover").is(":visible")){
+					console.log('down');
+					moveActiveDown();
+					setTimeout(1000);
+				}
+				break;
+			  }
+			}
+		  }
+		  break;
+		case "screenTap":
+			if (!$("#cover").is(":visible")){
+				console.log('tap');
+				openRecipe();
+			}
+			break;
+		case "keyTap":
+		  break;
+	  }
+	}
   }
   // gestureOutput.innerHTML = gestureString;
 
@@ -223,9 +209,9 @@ Leap.loop(controllerOptions, function(frame) {
 
 function vectorToString(vector, digits) {
   if (typeof digits === "undefined") {
-    digits = 1;
+	digits = 1;
   }
   return "(" + vector[0].toFixed(digits) + ", "
-             + vector[1].toFixed(digits) + ", "
-             + vector[2].toFixed(digits) + ")";
+			 + vector[1].toFixed(digits) + ", "
+			 + vector[2].toFixed(digits) + ")";
 }
