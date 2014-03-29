@@ -9,8 +9,7 @@
 		<!-- Leap (http://js.leapmotion.com/) -->
 		<script src="{% static "js/leap-0.4.3.min.js" %}"></script>
 		<!-- Leapstrap -->
-		<script src="{% static "leapstrap/js/leapstrap.js/" %}"></script>
-		<link href="{% static "css/index.css" %}" rel="stylesheet" media="screen">
+		<script src="{% static "js/sample.js/" %}"></script>
 		{% block extraheaders %} {% endblock %}
 		<title> {% block title %} {% endblock %} </title>
 	</head>
@@ -43,7 +42,9 @@
 		<script type="text/javascript" src="{% static "js/annyang.min.js" %}"></script>
 		<script>
 		LeapManager.init({
-		maxCursors:5,
+		enableMetaGestures: true,
+		enableDefaultMetaGestureActions: true,
+		maxCursors:1,
 		enableHoverTap: true,
 		enablePressDown: true,
 		enableScrollbarScrolling: true,
