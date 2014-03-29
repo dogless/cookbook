@@ -5,6 +5,10 @@ Cookbook
 {% endblock %}
 {% block navtitle %} The Cookbook {% endblock %}
 
+{% block extraheaders %}
+	<link href="{% static "css/index.css" %}" rel="stylesheet" media="screen">
+	<script src="{% static "js/index.js" %}"></script>
+{% endblock %}
 
 {% block content %}
 <div id="main" class="container body-margin">
@@ -12,7 +16,7 @@ Cookbook
 		<div class="col-md-12">	
 			<ul id="recipes">
 				{% for recipe in recipes %}
-					<li {% if forloop.first %}class="active"{% endif %}> 
+					<li {% if forloop.first %}class="active"{% endif %} value="{{recipe.id}}"> 
 						<div>
 							<p>{{recipe.name}}</p>
 						</div>
@@ -22,8 +26,4 @@ Cookbook
 		</div>
 	</div>
 </div>
-
-{% endblock %}
-{% block extraheaders %}
-	<script src="{% static "js/index.js" %}"></script>
 {% endblock %}
