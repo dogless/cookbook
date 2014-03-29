@@ -18,24 +18,8 @@
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Project name</a>
+					<a class="navbar-brand" href="#">{% block navtitle %}{% endblock %}</a>
 				</div>
-				<div class="navbar-collapse collapse">
-					<form class="navbar-form navbar-right">
-						<div class="form-group">
-							<input type="text" placeholder="Email" class="form-control leap-interactive">
-						</div>
-						<div class="form-group">
-							<input type="password" placeholder="Password" class="form-control leap-interactive">
-						</div>
-						<button type="submit" class="btn btn-success leap-interactive">Sign in</button>
-					</form>
-				</div><!--/.navbar-collapse -->
 			</div>
 		</div>
 		<form id="search" action="/search/" method="get">

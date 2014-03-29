@@ -21,6 +21,7 @@ def recipe(request, number):
 
 	print steps
 	context = {
+		'recipe': recipe,
 		'steps': steps,
 	}
 	return render(request, 'recipe/recipe.html', context)
