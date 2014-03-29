@@ -199,21 +199,3 @@ function vectorToString(vector, digits) {
              + vector[1].toFixed(digits) + ", "
              + vector[2].toFixed(digits) + ")";
 }
-
-function togglePause() {
-  paused = !paused;
-
-  if (paused) {
-    document.getElementById("pause").innerText = "Resume";
-  } else {
-    document.getElementById("pause").innerText = "Pause";
-  }
-}
-
-function pauseForGestures() {
-  if (document.getElementById("pauseOnGesture").checked) {
-    pauseOnGesture = true;
-  } else {
-    pauseOnGesture = false;
-  }
-}

@@ -28,7 +28,7 @@ function moveActiveDown(){
 
 function moveActiveUp(){
 	var index = $( ".active" ).index();
-	if (index - 5 > 0){
+	if (index - 5 >= 0){
 		$("li").get(index).className = "";
 		$("li").get(index-5).className = "active";
 	}
