@@ -7,4 +7,6 @@ Cookbook! ![codeship](https://www.codeship.io/projects/4e70f1b0-990d-0131-fb57-5
 
 TODO
 ====
-- simple bootstrap page
+- ~~simple bootstrap page~~
+- ~~leapstrap~~
+- test leapstrap swipe function
