@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extraheaders %}
+	<link href="{% static "css/jquery.fullPage.css" %}" rel="stylesheet" media="screen">
+	<script src="{% static "js/jquery.easings.min.js" %}"></script>
+	<script src="{% static "js/jquery.slimscroll.min.js" %}"></script>
+	<script src="{% static "js/jquery.fullPage.min.js" %}"></script>
+{% endblock %}
+{% block title %}
+Cookbook
+{% endblock %}
+{% block content %}
+<div id="main" class="container body-margin">
+	<div class="section">
+		<div class="slide" data-anchor="slide1"> <p class="text-center"> Slide 1 </p> </div>
+		<div class="slide" data-anchor="slide2"> <p class="text-center"> Slide 2 </div>
+	</div>
+
+
+	<script>
+		$(document).ready(function() {
+			$.fn.fullpage();
+		});
+	</script>
+</div>
+{% endblock %}
