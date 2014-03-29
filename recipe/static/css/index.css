@@ -12,10 +12,16 @@ body{
 }
 
 #recipes li {
-	width:33%;
 	list-style-type: none;
 	position: relative;
 	float: left;
+	width:25%;
+}
+
+#recipes li div {
+	margin: 5px;
+	height:225px;
+	background:green;
 }
 
 .active {

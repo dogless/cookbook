@@ -1,22 +1,29 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block title %}
 Cookbook
 {% endblock %}
 {% block navtitle %} The Cookbook {% endblock %}
+
+
 {% block content %}
 <div id="main" class="container body-margin">
 	<div class="row">
 		<div class="col-md-9 col-md-offset-2">	
 			<ul id="recipes">
 				{% for recipe in recipes %}
-					{% if forloop.first %}
-						<li class="active"> {{recipe.name}} </li>
-					{% else %}
-						<li> {{recipe.name}} </li>
-					{% endif %}
+					<li onclick="changeActive()" {% if forloop.first %}class="active"{% endif %}> 
+						<div>
+							<p>{{recipe.name}}</p>
+						</div>
+					</li>
 				{% endfor %}	
 			</ul>
 		</div>
 	</div>
 </div>
+
+{% endblock %}
+{% block extraheaders %}
+	<script src="{% static "js/index.js" %}"></script>
 {% endblock %}
