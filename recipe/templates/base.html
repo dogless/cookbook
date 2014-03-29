@@ -2,16 +2,55 @@
 
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css/" %}">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Leapstrap -->
+		<link href="{% static "leapstrap/css/leapstrap.css" %}" rel="stylesheet" media="screen">
+		<!-- jQuery (necessary for Leapstrap's JavaScript plugins) -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<!-- Leap (http://js.leapmotion.com/) -->
+		<script src="//js.leapmotion.com/0.3.0-beta3/leap.js"></script>
+		<!-- Leapstrap -->
+    	<script src="{% static "leapstrap/js/leapstrap.js" %}"></script>
 		{% block extraheaders %} {% endblock %}
 		<title> {% block title %} {% endblock %} </title>
 	</head>
 	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Project name</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<form class="navbar-form navbar-right">
+						<div class="form-group">
+							<input type="text" placeholder="Email" class="form-control leap-interactive">
+						</div>
+						<div class="form-group">
+							<input type="password" placeholder="Password" class="form-control leap-interactive">
+						</div>
+						<button type="submit" class="btn btn-success leap-interactive">Sign in</button>
+					</form>
+				</div><!--/.navbar-collapse -->
+			</div>
+		</div>
 		{% block content %} {% endblock %}
-	<body>
 
-	<script type="text/javascript" src="{% static "js/jquery-2.1.0.min.js" %}"></script>
-	<script type="text/javascript" src="{% static "js/annyang.min.js" %}"></script>
-	<script type="text/javascript" src="{% static "js/leap-0.4.3.min.js" %}"></script>
-	
+		<script type="text/javascript" src="{% static "js/annyang.min.js" %}"></script>
+		<script>
+		LeapManager.init({
+		enableMetaGestures: true,
+		enableDefaultMetaGestureActions: true,
+		maxCursors:1,
+		enableHoverTap: true,
+		enablePressDown: true,
+		enableScrollbarScrolling: true,
+		});
+		</script>
+
+	<body>
 </html>
