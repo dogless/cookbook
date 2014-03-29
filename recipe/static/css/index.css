@@ -2,7 +2,7 @@ body{
 	font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
 	-webkit-text-size-adjust:100%;
 	-ms-text-size-adjust:100%;
-	background:gray;
+	background:rgb(240, 238, 229);
 }
 
 #cover{
@@ -56,5 +56,5 @@ body{
 }
 
 .active {
-	background:yellow;
+	background:rgb(241, 93, 88);
 }
