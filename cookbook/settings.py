@@ -75,9 +75,7 @@ else:
     DATABASES['default'] = dj_database_url.config(default='postgres://a:a@localhost/cookbook')
     if isHeroku is not None:
         DEBUG = False
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.6/topics/i18n/
+# Internationalization # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -103,6 +101,8 @@ import os
 
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),

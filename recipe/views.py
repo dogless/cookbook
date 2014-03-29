@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from recipe.models import Recipe, Step
+from django.template import RequestContext
+from django.shortcuts import render_to_response
 
 # Create your views here.
 def index(request):
 	recipes = Recipe.objects.all()
 
-	context = {
+	context = RequestContext(request, {
 		'recipes': recipes,
-	}
-	return render(request, 'recipe/index.html', context)
+	})
+	return render_to_response('recipe/index.html', context_instance = context)
 
 def search(request):
 	context = {'recipes' : []}

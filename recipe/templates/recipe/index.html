@@ -24,8 +24,11 @@ Cookbook
 			<ul id="recipes">
 				{% for recipe in recipes %}
 					<li {% if forloop.first %}class="active"{% endif %} value="{{recipe.id}}"> 
-						<div>
+						<div class="text-center">
 							<p>{{recipe.name}}</p>
+							{% if recipe.avatar %}
+								<img width=100% height=200px src="{{MEDIA_URL}}{{recipe.avatar}}"/>
+							{% endif %}
 						</div>
 					</li>
 				{% endfor %}	
