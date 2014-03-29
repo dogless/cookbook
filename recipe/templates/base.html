@@ -11,7 +11,6 @@
 		<!-- Leapstrap -->
 		<script src="{% static "js/sample.js/" %}"></script>
 		<link href="{% static "css/index.css" %}" rel="stylesheet" media="screen">
-
 		{% block extraheaders %} {% endblock %}
 		<title> {% block title %} {% endblock %} </title>
 	</head>
@@ -40,7 +39,31 @@
 			</div>
 		</div>
 		{% block content %} {% endblock %}
-
 		<script type="text/javascript" src="{% static "js/annyang.min.js" %}"></script>
+		<script>
+
+		var banana = function(){
+			alert('banana');
+		}
+
+		var search = function(query){
+			alert(query);
+		}
+
+		if (annyang) {
+			// Let's define a command.
+			console.log('working');
+			var commands = {
+			'banana': banana,
+			'search *search': search,
+			};
+
+			// Add our commands to annyang
+			annyang.addCommands(commands);
+
+			// Start listening.
+			annyang.start();
+		}
+		</script>
 	<body>
 </html>
