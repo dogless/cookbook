@@ -24,7 +24,6 @@ def recipe(request, number):
 	recipe = Recipe.objects.get(id=number)
 	steps = recipe.step_set.all()
 
-	print steps
 	context = {
 		'recipe': recipe,
 		'steps': steps,
