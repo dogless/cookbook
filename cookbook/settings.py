@@ -71,7 +71,7 @@ if isCodeship is not None:
     }
 else:
     import dj_database_url
-    DATABASES['default'] = dj_database_url.config(default='postgres://a:a@localhost/thedb')
+    DATABASES['default'] = dj_database_url.config(default='postgres://a:a@localhost/cookbook')
     if isHeroku is not None:
         DEBUG = False
 
