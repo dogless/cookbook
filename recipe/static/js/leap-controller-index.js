@@ -154,35 +154,39 @@ Leap.loop(controllerOptions, function(frame) {
         case "swipe":
           var xDirection = Math.abs(gesture.direction[0]);
           var yDirection = Math.abs(gesture.direction[1]);
-          if (xDirection > 0.5){
-              if(gesture.direction[0] > 0){
-                console.log('right');
-                moveActiveRight();
+          
+          if(gesture.state === 'stop'){
+            if (xDirection > 0.5){
+                if(gesture.direction[0] > 0){
+                  console.log('right');
+                  moveActiveRight();
+                  break;
+                }
+                else{
+                  console.log('left');
+                  moveActiveLeft();
+                  break;
+                }
+            }
+            if (yDirection > 0.5){
+              if(gesture.direction[1] > 0){
+                console.log('up');
+                $('#cover').animate({
+                  marginTop: "-=100%",
+                }, 600, function(){
+                  $('#cover').hide()
+                });  
+                moveActiveUp();
                 break;
               }
               else{
-                console.log('left');
-                moveActiveLeft();
+                console.log('down');
+                moveActiveDown();
                 break;
               }
-          }
-          if (yDirection > 0.5){
-            if(gesture.direction[1] > 0){
-              console.log('up');
-              $('#cover').animate({
-                marginTop: "-=100%",
-              }, 600, function(){
-                $('#cover').hide()
-              });  
-              moveActiveUp();
-              break;
-            }
-            else{
-              console.log('down');
-              moveActiveDown();
-              break;
             }
           }
+
           gestureString += "start position: " + vectorToString(gesture.startPosition) + " mm, "
                         // + "current position: " + vectorToString(gesture.position) + " mm, "
                         + "direction: " + vectorToString(gesture.direction, 2) + ", "
