@@ -1,14 +1,13 @@
 {% load staticfiles %}
-
 <html>
 	<head>
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Leapstrap -->
 		<link href="{% static "leapstrap/css/leapstrap.css" %}" rel="stylesheet" media="screen">
 		<!-- jQuery (necessary for Leapstrap's JavaScript plugins) -->
-		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="{% static "js/jquery-1.11.0.min.js" %}"></script>
 		<!-- Leap (http://js.leapmotion.com/) -->
-		<script src="//js.leapmotion.com/0.3.0-beta3/leap.js"></script>
+		<script src="{% static "js/leap-0.4.3.min.js" %}"></script>
 		<!-- Leapstrap -->
 		<script src="{% static "leapstrap/js/leapstrap.js/" %}"></script>
 		<link href="{% static "css/index.css" %}" rel="stylesheet" media="screen">
