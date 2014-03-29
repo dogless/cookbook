@@ -9,10 +9,10 @@ Cookbook
 {% block content %}
 <div id="main" class="container body-margin">
 	<div class="row">
-		<div class="col-md-9 col-md-offset-2">	
+		<div class="col-md-12">	
 			<ul id="recipes">
 				{% for recipe in recipes %}
-					<li onclick="changeActive()" {% if forloop.first %}class="active"{% endif %}> 
+					<li {% if forloop.first %}class="active"{% endif %}> 
 						<div>
 							<p>{{recipe.name}}</p>
 						</div>
