@@ -36,97 +36,97 @@ Leap.loop(controllerOptions, function(frame) {
   }
   frameOutput.innerHTML = "<div style='width:300px; float:left; padding:5px'>" + frameString + "</div>";
 
-  // Display Hand object data
-  var handOutput = document.getElementById("handData");
-  var handString = "";
-  if (frame.hands.length > 0) {
-    for (var i = 0; i < frame.hands.length; i++) {
-      var hand = frame.hands[i];
+  // // Display Hand object data
+  // var handOutput = document.getElementById("handData");
+  // var handString = "";
+  // if (frame.hands.length > 0) {
+  //   for (var i = 0; i < frame.hands.length; i++) {
+  //     var hand = frame.hands[i];
 
-      handString += "<div style='width:300px; float:left; padding:5px'>";
-      handString += "Hand ID: " + hand.id + "<br />";
-      handString += "Direction: " + vectorToString(hand.direction, 2) + "<br />";
-      handString += "Palm normal: " + vectorToString(hand.palmNormal, 2) + "<br />";
-      handString += "Palm position: " + vectorToString(hand.palmPosition) + " mm<br />";
-      handString += "Palm velocity: " + vectorToString(hand.palmVelocity) + " mm/s<br />";
-      handString += "Sphere center: " + vectorToString(hand.sphereCenter) + " mm<br />";
-      handString += "Sphere radius: " + hand.sphereRadius.toFixed(1) + " mm<br />";
+  //     handString += "<div style='width:300px; float:left; padding:5px'>";
+  //     handString += "Hand ID: " + hand.id + "<br />";
+  //     handString += "Direction: " + vectorToString(hand.direction, 2) + "<br />";
+  //     handString += "Palm normal: " + vectorToString(hand.palmNormal, 2) + "<br />";
+  //     handString += "Palm position: " + vectorToString(hand.palmPosition) + " mm<br />";
+  //     handString += "Palm velocity: " + vectorToString(hand.palmVelocity) + " mm/s<br />";
+  //     handString += "Sphere center: " + vectorToString(hand.sphereCenter) + " mm<br />";
+  //     handString += "Sphere radius: " + hand.sphereRadius.toFixed(1) + " mm<br />";
 
-      // Hand motion factors
-      if (previousFrame && previousFrame.valid) {
-        var translation = hand.translation(previousFrame);
-        handString += "Translation: " + vectorToString(translation) + " mm<br />";
+  //     // Hand motion factors
+  //     if (previousFrame && previousFrame.valid) {
+  //       var translation = hand.translation(previousFrame);
+  //       handString += "Translation: " + vectorToString(translation) + " mm<br />";
 
-        var rotationAxis = hand.rotationAxis(previousFrame, 2);
-        var rotationAngle = hand.rotationAngle(previousFrame);
-        handString += "Rotation axis: " + vectorToString(rotationAxis) + "<br />";
-        handString += "Rotation angle: " + rotationAngle.toFixed(2) + " radians<br />";
+  //       var rotationAxis = hand.rotationAxis(previousFrame, 2);
+  //       var rotationAngle = hand.rotationAngle(previousFrame);
+  //       handString += "Rotation axis: " + vectorToString(rotationAxis) + "<br />";
+  //       handString += "Rotation angle: " + rotationAngle.toFixed(2) + " radians<br />";
 
-        var scaleFactor = hand.scaleFactor(previousFrame);
-        handString += "Scale factor: " + scaleFactor.toFixed(2) + "<br />";
-      }
+  //       var scaleFactor = hand.scaleFactor(previousFrame);
+  //       handString += "Scale factor: " + scaleFactor.toFixed(2) + "<br />";
+  //     }
 
-      // IDs of pointables (fingers and tools) associated with this hand
-      if (hand.pointables.length > 0) {
-        var fingerIds = [];
-        var toolIds = [];
-        for (var j = 0; j < hand.pointables.length; j++) {
-          var pointable = hand.pointables[j];
-          if (pointable.tool) {
-            toolIds.push(pointable.id);
-          }
-          else {
-            fingerIds.push(pointable.id);
-          }
-        }
-        if (fingerIds.length > 0) {
-          handString += "Fingers IDs: " + fingerIds.join(", ") + "<br />";
-        }
-        if (toolIds.length > 0) {
-          handString += "Tools IDs: " + toolIds.join(", ") + "<br />";
-        }
-      }
+  //     // IDs of pointables (fingers and tools) associated with this hand
+  //     if (hand.pointables.length > 0) {
+  //       var fingerIds = [];
+  //       var toolIds = [];
+  //       for (var j = 0; j < hand.pointables.length; j++) {
+  //         var pointable = hand.pointables[j];
+  //         if (pointable.tool) {
+  //           toolIds.push(pointable.id);
+  //         }
+  //         else {
+  //           fingerIds.push(pointable.id);
+  //         }
+  //       }
+  //       if (fingerIds.length > 0) {
+  //         handString += "Fingers IDs: " + fingerIds.join(", ") + "<br />";
+  //       }
+  //       if (toolIds.length > 0) {
+  //         handString += "Tools IDs: " + toolIds.join(", ") + "<br />";
+  //       }
+  //     }
 
-      handString += "</div>";
-    }
-  }
-  else {
-    handString += "No hands";
-  }
-  handOutput.innerHTML = handString;
+  //     handString += "</div>";
+  //   }
+  // }
+  // else {
+  //   handString += "No hands";
+  // }
+  // handOutput.innerHTML = handString;
 
-  // Display Pointable (finger and tool) object data
-  var pointableOutput = document.getElementById("pointableData");
-  var pointableString = "";
-  if (frame.pointables.length > 0) {
-    for (var i = 0; i < frame.pointables.length; i++) {
-      var pointable = frame.pointables[i];
+  // // Display Pointable (finger and tool) object data
+  // var pointableOutput = document.getElementById("pointableData");
+  // var pointableString = "";
+  // if (frame.pointables.length > 0) {
+  //   for (var i = 0; i < frame.pointables.length; i++) {
+  //     var pointable = frame.pointables[i];
 
-      pointableString += "<div style='width:250px; float:left; padding:5px'>";
-      pointableString += "Pointable ID: " + pointable.id + "<br />";
-      pointableString += "Belongs to hand with ID: " + pointable.handId + "<br />";
+  //     pointableString += "<div style='width:250px; float:left; padding:5px'>";
+  //     pointableString += "Pointable ID: " + pointable.id + "<br />";
+  //     pointableString += "Belongs to hand with ID: " + pointable.handId + "<br />";
 
-      if (pointable.tool) {
-        pointableString += "Classified as a tool <br />";
-        pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
-        pointableString += "Width: "  + pointable.width.toFixed(1) + " mm<br />";
-      }
-      else {
-        pointableString += "Classified as a finger<br />";
-        pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
-      }
+  //     if (pointable.tool) {
+  //       pointableString += "Classified as a tool <br />";
+  //       pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
+  //       pointableString += "Width: "  + pointable.width.toFixed(1) + " mm<br />";
+  //     }
+  //     else {
+  //       pointableString += "Classified as a finger<br />";
+  //       pointableString += "Length: " + pointable.length.toFixed(1) + " mm<br />";
+  //     }
 
-      pointableString += "Direction: " + vectorToString(pointable.direction, 2) + "<br />";
-      pointableString += "Tip position: " + vectorToString(pointable.tipPosition) + " mm<br />";
-      pointableString += "Tip velocity: " + vectorToString(pointable.tipVelocity) + " mm/s<br />";
+  //     pointableString += "Direction: " + vectorToString(pointable.direction, 2) + "<br />";
+  //     pointableString += "Tip position: " + vectorToString(pointable.tipPosition) + " mm<br />";
+  //     pointableString += "Tip velocity: " + vectorToString(pointable.tipVelocity) + " mm/s<br />";
 
-      pointableString += "</div>";
-    }
-  }
-  else {
-    pointableString += "<div>No pointables</div>";
-  }
-  pointableOutput.innerHTML = pointableString;
+  //     pointableString += "</div>";
+  //   }
+  // }
+  // else {
+  //   pointableString += "<div>No pointables</div>";
+  // }
+  // pointableOutput.innerHTML = pointableString;
 
   // Display Gesture object data
   var gestureOutput = document.getElementById("gestureData");
@@ -152,6 +152,15 @@ Leap.loop(controllerOptions, function(frame) {
                         + "progress: " + gesture.progress.toFixed(2) + " rotations";
           break;
         case "swipe":
+          var xDirection = Math.abs(gesture.direction[0]);
+          if (xDirection > 0.5){
+              if(gesture.direction[0] > 0){
+                console.log('right swipe');
+              }
+              else{
+                console.log('left swipe');
+              }
+          }
           gestureString += "start position: " + vectorToString(gesture.startPosition) + " mm, "
                         + "current position: " + vectorToString(gesture.position) + " mm, "
                         + "direction: " + vectorToString(gesture.direction, 2) + ", "
