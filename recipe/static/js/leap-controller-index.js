@@ -135,19 +135,15 @@ Leap.loop(controllerOptions, function(frame) {
 	 if (pauseOnGesture) {
 		 togglePause();
 	 }
-	var scroll = 0;
 	 for (var i = 0; i < frame.gestures.length; i++) {
 		var gesture = frame.gestures[i];
 		switch (gesture.type) {
 			case "circle":
 			console.log('circle');
 			if(gesture.state === 'stop'){
-				if(scroll == 0){
-					$('html, body').animate({
-						scrollTop: $('#recipes').offset().top
-					});
-					scroll = 1;
-				}
+				$('html, body').animate({
+					scrollTop: $('#recipes').offset().top
+				});
 			}
 			break;
 			case "swipe":
