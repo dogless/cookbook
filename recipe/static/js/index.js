@@ -23,7 +23,7 @@ function moveActiveDown(){
 	if (index < lis.length-5){
 		$("li").get(index).className = "";
 		$("li").get(index+5).className = "active";
-	{
+	}
 }
 
 function moveActiveUp(){
@@ -32,4 +32,10 @@ function moveActiveUp(){
 		$("li").get(index).className = "";
 		$("li").get(index-5).className = "active";
 	}
+}
+
+function openRecipe(){
+	var index = $( ".active" ).index() + 1;
+	var newLocation = "/recipe/" + index;
+	location.href = newLocation;
 }
