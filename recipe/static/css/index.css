@@ -47,8 +47,12 @@ body{
 
 #recipes li div {
 	margin: 5px;
-	height:225px;
-	background:green;
+	height:230px;
+	background-color: rgb(56, 56, 56);
+}
+
+#recipes li p {
+	color: white;
 }
 
 .active {
