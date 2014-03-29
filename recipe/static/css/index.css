@@ -2,9 +2,10 @@
 	position:absolute;
 	background-image: url("/static/img/recipefull.jpg");
 	background-size: cover;
-	height: 100%;
+	background-repeat: no-repeat;
+	background-position: 0px -350px;
+	height: 600px;
 	width: 100%; 
-	z-index: 1;
 }
 
 .logo h1{
