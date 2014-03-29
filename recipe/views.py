@@ -15,12 +15,12 @@ def search(request):
 		}
 	return render(request, 'recipe/search.html', context)
 
-def test(request):
-	recipe = Recipe.objects.get(name="pbj")
+def recipe(request, number):
+	recipe = Recipe.objects.get(id=number)
 	steps = recipe.step_set.all()
 
 	print steps
 	context = {
 		'steps': steps,
 	}
-	return render(request, 'recipe/test.html', context)
+	return render(request, 'recipe/recipe.html', context)
