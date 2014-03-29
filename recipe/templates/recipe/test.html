@@ -12,8 +12,9 @@ Cookbook
 {% block content %}
 <div id="main" class="container body-margin">
 	<div class="section">
-		<div class="slide" data-anchor="slide1"> <p class="text-center"> Slide 1 </p> </div>
-		<div class="slide" data-anchor="slide2"> <p class="text-center"> Slide 2 </div>
+		{% for step in steps %}
+			<div class="slide" data-anchor="slide{{forloop.counter}}"> <p class="text-center"> {{step.details}} </p> </div>
+		{% endfor %}
 	</div>
 
 
