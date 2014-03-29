@@ -1,8 +1,8 @@
 function moveActiveLeft(){
 	var index = $( ".active" ).index();
 	if (index != 0){
-		$("li").get(index).className = "";
-		$("li").get(index-1).className = "active";
+		$(".recipe-item").get(index).className = "recipe-item";
+		$(".recipe-item").get(index-1).className = "active recipe-item";
 	}
 }
 
@@ -11,8 +11,8 @@ function moveActiveRight(){
 	var index = $( ".active" ).index();
 
 	if (index != lis.length-1){
-		$("li").get(index).className = "";
-		$("li").get(index+1).className = "active";
+		$(".recipe-item").get(index).className = "recipe-item";
+		$(".recipe-item").get(index+1).className = "active recipe-item";
 	}
 }
 
@@ -21,16 +21,16 @@ function moveActiveDown(){
 	var index = $( ".active" ).index();
 
 	if (index < lis.length-5){
-		$("li").get(index).className = "";
-		$("li").get(index+5).className = "active";
+		$(".recipe-item").get(index).className = "recipe-item";
+		$(".recipe-item").get(index+5).className = "active recipe-item";
 	}
 }
 
 function moveActiveUp(){
 	var index = $( ".active" ).index();
 	if (index - 5 >= 0){
-		$("li").get(index).className = "";
-		$("li").get(index-5).className = "active";
+		$(".recipe-item").get(index).className = "recipe-item";
+		$(".recipe-item").get(index-5).className = "active recipe-item";
 	}
 }
 
