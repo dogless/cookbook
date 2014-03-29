@@ -35,10 +35,6 @@ body{
 	display:none;
 }
 
-.recipe-tag{
-	z-index: 0;
-}
-
 .body-margin{
 	padding-top: 100px;
 }
