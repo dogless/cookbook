@@ -131,7 +131,7 @@ body{
 
 .active > div{
 	box-shadow: 0 0 30px rgb(241, 93, 88);
-    -webkit-box-shadow: 0 0 40px rgb(241, 93, 88); 
+    -webkit-box-shadow: 0 0 30px rgb(241, 93, 88); 
     -moz-box-shadow: 0 0 30px rgb(241, 93, 88);
 }
 
