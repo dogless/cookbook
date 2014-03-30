@@ -11,4 +11,4 @@ TODO
 - ~~leapstrap~~
 - ~~test leapstrap swipe function~~
 - ~~make pretty~~
-- fill pages
+- ~~fill pages~~
