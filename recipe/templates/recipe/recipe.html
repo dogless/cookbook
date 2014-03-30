@@ -78,7 +78,32 @@
 		<script src="{% static "js/bookblock/jquery.bookblock.js" %}"></script>
 		<script src="{% static "js/bookblock/page.js" %}"></script>
 		<script src="{% static "js/leap-controller-recipe.js" %}"></script>
+		<script type="text/javascript" src="{% static "js/annyang.min.js" %}"></script>
 		<script>
+			var banana = function(){
+				console.log('banana');
+			}
+
+			var search = function(query){
+				console.log(query);
+				$('#search-text').val(query);
+				$('#search').submit();
+			}
+
+			if (annyang) {
+				// Let's define a command.
+				console.log('working');
+				var commands = {
+				'banana': banana,
+				'search *search': search,
+				};
+
+				// Add our commands to annyang
+				annyang.addCommands(commands);
+
+				// Start listening.
+				annyang.start();
+			}
 			$(function() {
 
 				Page.init();
