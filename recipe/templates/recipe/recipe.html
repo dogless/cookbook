@@ -45,7 +45,9 @@
 										<p>{{step.details}}</p>	
 									</div>
 									<div class="div2">
-										<img src="{{step.avatar.url}}"/>
+										{% if step.avatar %}
+											<img src="{{step.avatar.url}}"/>
+										{% endif %}
 									</div>
 									<div class="clear"></div>
 								</div>
