@@ -82,14 +82,7 @@ body{
 	list-style-type: none;
 	position: relative;
 	float: left;
-	width:20%;
-}
 
-#recipes li div {
-	border-radius:5px;
-	margin: 10px;
-	height:250px;
-	background-color: rgb(56, 56, 56);
 }
 
 .wrapper{
@@ -99,6 +92,14 @@ body{
 
 #recipes li p {
 	color: white;
+}
+
+.recipe-card{
+	height: 300px;
+	width: 250px;
+	border-radius:5px;
+	margin: 10px;
+	background-color: rgb(56, 56, 56);
 }
 
 .active div{
