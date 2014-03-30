@@ -10,4 +10,5 @@ TODO
 - ~~simple bootstrap page~~
 - ~~leapstrap~~
 - ~~test leapstrap swipe function~~
-- make pretty
+- ~~make pretty~~
+- fill pages
