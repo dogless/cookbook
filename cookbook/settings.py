@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'recipe',
+    'storages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,6 +49,12 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
+
+AWS_STORAGE_BUCKET_NAME = os.getenv('S3_BUCKET')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') 
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID') 
 
 ROOT_URLCONF = 'cookbook.urls'
 
