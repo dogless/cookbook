@@ -13,6 +13,7 @@ div.div1 {
 	height: 100%; 
 	width: 50%; 
 	margin-left: 15px;
+	padding-top: 50px;
 }
 div.div2{
 	/* background: #666; */
@@ -294,12 +295,12 @@ a:hover {
 	text-align: justify;	
 }
 .page-step {
-	font-size: 1.5em;
+	font-size: 2em;
 	line-height: 2;
 	font-weight: 300;
 	padding: 5px 8%;
 	padding-left: 50px;
-	text-align: justify;
+	text-align: left;
 }
 
 @media screen and (max-width: 800px){
