@@ -3,7 +3,6 @@
 {% block title %}
 Cookbook
 {% endblock %}
-{% block navtitle %} The Cookbook {% endblock %}
 
 {% block extraheaders %}
 	<link href="{% static "css/index.css" %}" rel="stylesheet" media="screen">
@@ -12,10 +11,20 @@ Cookbook
 {% endblock %}
 
 {% block content %}
-<div class="banner" class="jumbotron">
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Cookbook</a>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#"><span class="glyphicon glyphicon-search"></span> Try saying "search chicken"</a></li>
+		</ul>
+	</div>
 </div>
-<div class="wrapper">
-	<div>
+<div class="jumbotron banner">
+</div>
+<div class="body-content">
+	<div class="wrapper">
 		<ul id="recipes">
 			{% for recipe in recipes %}
 				<li {% if forloop.first %}class="active recipe-item"{% else %} class="recipe-item" {% endif %} value="{{recipe.id}}"> 

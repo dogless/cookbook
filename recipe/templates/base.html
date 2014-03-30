@@ -13,21 +13,22 @@
 		<title> {% block title %} {% endblock %} </title>
 	</head>
 	<body>
-		<div class="navbar navbar-inverse navbar-fixed-top recipe-tag">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">{% block navtitle %}{% endblock %}</a>
-				</div>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-search"></span> Try saying "search chicken"</a></li>
-				</ul>
-			</div>
-		</div>
 		<form id="search" action="/search/" method="get">
 			<input id="search-text" type="text" name="q">
 			<input type="submit" value="Search">
 		</form>
 		{% block content %} {% endblock %}
+
+		<div id="footer">
+			<div class="container">
+				<ul>
+					<li><a href="/" class="text-muted">The Team</a></li>
+					<li><a href="/" class="text-muted">Contact</a></li>
+					<li><a href="/" class="text-muted">Cookbook &copy;</a></li>
+				</ul>
+			</div>
+		</div>
+
 		<script type="text/javascript" src="{% static "js/annyang.min.js" %}"></script>
 		<script>
 

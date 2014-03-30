@@ -35,7 +35,7 @@ function moveActiveUp(){
 }
 
 function openRecipe(){
-	var index = $( ".active" ).index() + 1;
+	var index = $( ".active" ).val();
 	var newLocation = "/recipe/" + index;
 	location.href = newLocation;
 }
