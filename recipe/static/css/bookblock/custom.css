@@ -1,16 +1,44 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 ul li{ font-size:24px;}
-div.box {/* background: #EEE; */height: 100px; width: 1100px; margin:0 auto;}
-div.div1{/* background: #999 */; float: left; height: 100%; width: 550px; }
-div.div2{/* background: #666; */height: 100%; }
+div.box {
+	/* background: #EEE; */
+	height: 100px; 
+	width: 1100px; 
+	margin:0 auto;
+}
+div.div1 {
+	/* background: #999 */float: left; 
+	height: 100%; 
+	width: 550px; 
+	border: 1px dashed black;
+}
+div.div2{
+	/* background: #666; */
+	height: 100%; 
+}
 div.div2 img{
 	max-width:450px;
 	max-height:300px;
 	display:block;
 	margin: auto;
 }
-div.clear { clear: both; height: 1px; overflow: hidden; font-size:0pt; margin-top: -1px; }
+div.clear { 
+	clear: both; 
+	height: 1px; 
+	overflow: hidden; 
+	font-size:0pt;
+	margin-top: -1px; 
+}
+
+.book-image{
+	height: 600px; 
+	width: 600px;
+	-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+	-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+	box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
 
 html { height: 100%; }
 
