@@ -21,12 +21,12 @@ div.div2{
 	height: 100%;
 	width: 50%; 
 }
-div.div2 img{
+/*div.div2 img{
 	max-width:450px;
 	max-height:300px;
 	display:block;
 	margin: auto;
-}
+}*/
 div.clear { 
 	clear: both; 
 	height: 1px; 
@@ -43,14 +43,18 @@ div.clear {
 }
 
 .book-image{
-	height: 600px; 
-	width: 600px;
+	height: 500px; 
+	width: 500px;
+	margin-top: -25px;
+	margin-left: 100px;
 	-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 	-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 	box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+	overflow:hidden;
 }
 
-html { height: 100%; }
+html { height: 100%;	overflow: hidden;
+ }
 
 *,
 *:after,
@@ -69,6 +73,7 @@ body {
 	font-size: 100%;
 	color: #333;
 	height: 100%;
+	overflow: hidden;
 }
 
 .js body {

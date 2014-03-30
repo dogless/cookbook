@@ -50,9 +50,11 @@
 										<span class="page-step">{{step.details}}</span>
 									</div>
 									<div class="div2">
-										{% if step.avatar %}
-											<img src="{{step.avatar.url}}"/>
-										{% endif %}
+										<div class="container">
+											{% if step.avatar %}
+												<img class="book-image" src="{{step.avatar.url}}"/>
+											{% endif %}
+										</div>
 									</div>
 									<div class="clear"></div>
 								</div>
