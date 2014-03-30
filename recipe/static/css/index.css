@@ -6,6 +6,11 @@ body{
 	-ms-text-size-adjust:100%;
 }
 
+#title{
+	font-size: 22.5px;
+	letter-spacing: 2.5px;
+}
+
 .banner{
 	background-image: url("/static/img/recipegood.jpg");
 	background-size: cover;
