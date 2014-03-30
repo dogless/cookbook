@@ -28,10 +28,10 @@ Cookbook
 		<ul id="recipes">
 			{% for recipe in recipes %}
 				<li {% if forloop.first %}class="active recipe-item"{% else %} class="recipe-item" {% endif %} value="{{recipe.id}}"> 
-					<div class="text-center recipe-card container">
-						<div class="recipe-card-image">
+					<div class="text-center recipe-card">
+						<div class="recipe-card-image-container">
 							{% if recipe.avatar %}
-								<img src="{{recipe.avatar.url}}"/>
+								<img class="recipe-card-image" src="{{recipe.avatar.url}}"/>
 							{% endif %}
 							</div>
 						<div class="recipe-card-name">
