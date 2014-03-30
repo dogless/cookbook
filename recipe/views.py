@@ -27,6 +27,9 @@ def recipe(request, number):
 	steps = recipe.step_set.all()
 	ingredients = recipe.ingredient_set.all()
 
+	print ingredients
+	print recipe
+
 	context = {
 		'recipe': recipe,
 		'steps': steps,
