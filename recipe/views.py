@@ -36,3 +36,4 @@ def recipe(request, number):
 		'ingredients': ingredients,
 	}
 	return render(request, 'recipe/recipe.html', context)
+
