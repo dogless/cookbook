@@ -49,6 +49,18 @@ body{
 	display:none;
 }
 
+.text-spacing{
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 22px;
+	letter-spacing: 1px;
+}
+
+.recipe-name{
+	font-size: 15px;
+	color: #fff;
+}
+
 .body-margin{
 	padding-top: 20px;
 }

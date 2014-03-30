@@ -17,7 +17,7 @@ Cookbook
 			<a id="title" class="navbar-brand">Cookbook</a>
 		</div>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="#"><span class="glyphicon glyphicon-search"></span> Try saying "search chicken"</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-search"></span> <span class="text-spacing">Try saying "search chicken"</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -32,7 +32,7 @@ Cookbook
 						{% if recipe.avatar %}
 							<img width=100% height=200px src="{{MEDIA_URL}}{{recipe.avatar}}"/>
 						{% endif %}
-						<p>{{recipe.name}}</p>
+						<span class="text-spacing recipe-name">{{recipe.name}}</span>
 					</div>
 				</li>
 			{% endfor %}	
