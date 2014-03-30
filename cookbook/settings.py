@@ -50,12 +50,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-DEFAULT_FILE_STORAGE = 'recipe.s3utils.MediaRootS3BotoStorage'
-
-AWS_STORAGE_BUCKET_NAME = 'phcookbook-assets'
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') 
-AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID') 
-
 ROOT_URLCONF = 'cookbook.urls'
 
 WSGI_APPLICATION = 'cookbook.wsgi.application'
@@ -65,6 +59,15 @@ WSGI_APPLICATION = 'cookbook.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 isCodeship = os.getenv('PG_USER', None)
 isHeroku = os.getenv('DATABASE_URL', None)
+
+if isHeroku:
+	DEFAULT_FILE_STORAGE = 'recipe.s3utils.MediaRootS3BotoStorage'
+
+	AWS_STORAGE_BUCKET_NAME = 'phcookbook-assets'
+	AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') 
+	AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID') 
+
+
 
 DATABASES = {}
 if isCodeship is not None:
