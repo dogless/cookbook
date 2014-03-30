@@ -1,6 +1,6 @@
 var Page = (function() {
 
-	var $container = $( '#container' ),
+	$container = $( '#container' ),
 		$bookBlock = $( '#bb-bookblock' ),
 		$items = $bookBlock.children(),
 		itemsCount = $items.length,

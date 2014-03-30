@@ -146,12 +146,12 @@ Leap.loop(controllerOptions, function(frame) {
 				if (xDirection > 0.5){
 					if(gesture.direction[0] > 0){
 						console.log('right');
-						$('.section.active').find('.controlArrow.next:visible').trigger('click');
+						bb.prev();
 						break;
 					}
 					else{
 						console.log('left');
-						$('.section.active').find('.controlArrow.prev:visible').trigger('click');
+						bb.next();
 						break;
 					}
 				}
