@@ -8,29 +8,19 @@ body{
 }
 
 .banner{
-	background-image: url("/static/img/recipegood.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 0px 50px;
-	height: 700px;
-	width: 100%; 
-}
-
-.banner-search{
 	background-image: url("/static/img/dip.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 0px -100px;
+	background-position: center;
 	height: 400px;
-	width: 100%;
-    opacity:1;
+	width: 100%; 
 }
 
 .bannertext{
 	position:absolute;
-	font-size: 25px;
-	top: 10px;
-	left: 10px;
+	font-size: 75px;
+	top: 250px;
+	right: 150px;
 	color: #fff;
 }
 
