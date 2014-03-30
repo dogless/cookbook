@@ -25,7 +25,7 @@
 										<div class="container">
 											<ul>
 											{% for ingredient in ingredients %}
-												<li>{{ingredient.details}}</li>
+												<li><span class="ingredients">{{ingredient.details}}<span></li>
 											{% endfor %}
 											</ul>
 										</div>
@@ -47,7 +47,7 @@
 								<h2>Step {{step.number}}</h2>
 								<div class="box">
 									<div class="div1">
-										<span>{{step.details}}</span>
+										<span class="page-step">{{step.details}}</span>
 									</div>
 									<div class="div2">
 										{% if step.avatar %}
