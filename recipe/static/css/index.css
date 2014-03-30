@@ -4,7 +4,11 @@ body{
 	letter-spacing: -1px;
 	-webkit-text-size-adjust:100%;
 	-ms-text-size-adjust:100%;
-	background:rgb(240, 238, 229);
+}
+
+#title{
+	font-size: 22.5px;
+	letter-spacing: 2.5px;
 }
 
 .banner{
@@ -45,6 +49,15 @@ body{
 	display:none;
 }
 
+.text-spacing{
+	letter-spacing: 1px;
+}
+
+.recipe-name{
+	font-size: 15px;
+	color: #fff;
+}
+
 .body-margin{
 	padding-top: 20px;
 }
@@ -69,14 +82,7 @@ body{
 	list-style-type: none;
 	position: relative;
 	float: left;
-	width:20%;
-}
 
-#recipes li div {
-	border-radius:5px;
-	margin: 10px;
-	height:250px;
-	background-color: rgb(56, 56, 56);
 }
 
 .wrapper{
@@ -88,10 +94,36 @@ body{
 	color: white;
 }
 
-.active div{
+.recipe-card{
+	position:relative;
+	height: 300px;
+	width: 250px;
+	border-radius:5px;
+	margin: 10px;
+	background-color: rgb(56, 56, 56);
+}
+
+.recipe-card-image{
+	position: relative;
+	height: 200px;
+	width: 100%;
+}
+
+.recipe-card-name{
+	position:relative;
+	height: 50px;
+	width: 100%;
+}
+
+.text-bottom{
+	position:absolute;
+	bottom:-25px; left: 0; right: 0;
+}
+
+.active > div{
 	border-color:rgb(241, 93, 88);
 	border-style:solid;
-	border-width:5px;
+	border-width: 5px;
 }
 
 #footer{
