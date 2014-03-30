@@ -50,9 +50,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
-from s3utils import *
 AWS_STORAGE_BUCKET_NAME = os.getenv('S3_BUCKET')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') 
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID') 
