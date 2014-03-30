@@ -19,3 +19,7 @@ class Step(models.Model):
 
 	class Meta:
 		ordering = ('number',)
+
+class Ingredient(models.Model):
+	details = models.CharField(max_length=255)
+	recipe = models.ForeignKey(Recipe)
