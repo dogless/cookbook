@@ -142,7 +142,7 @@ Leap.loop(controllerOptions, function(frame) {
 			console.log('circle');
 			if(gesture.state === 'stop'){
 				$('html, body').animate({
-					scrollTop: $('#recipes').offset().top-100
+					scrollTop: $('.active').offset().top-100
 				});
 			}
 			break;
