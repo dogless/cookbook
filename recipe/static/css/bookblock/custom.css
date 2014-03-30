@@ -4,18 +4,20 @@ ul li{ font-size:24px;}
 div.box {
 	/* background: #EEE; */
 	height: 100px; 
-	width: 1100px; 
+	width: 100%; 
 	margin:0 auto;
 }
 div.div1 {
-	/* background: #999 */float: left; 
+	/* background: #999 */
+	float: left; 
 	height: 100%; 
-	width: 550px; 
-	border: 1px dashed black;
+	width: 50%; 
 }
 div.div2{
 	/* background: #666; */
-	height: 100%; 
+	float:right;
+	height: 100%;
+	width: 50%; 
 }
 div.div2 img{
 	max-width:450px;
@@ -29,6 +31,13 @@ div.clear {
 	overflow: hidden; 
 	font-size:0pt;
 	margin-top: -1px; 
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .book-image{

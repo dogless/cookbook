@@ -21,14 +21,18 @@
 								<h2> Ingredients </h2>
 								<div class="box">
 									<div class="div1">
-										<ul>
-										{% for ingredient in ingredients %}
-											<li>{{ingredient.details}}</li>
-										{% endfor %}
-										</ul>
+										<div class="container">
+											<ul>
+											{% for ingredient in ingredients %}
+												<li>{{ingredient.details}}</li>
+											{% endfor %}
+											</ul>
+										</div>
 									</div>
 									<div class="div2">
-										<img class="book-image" src="{{MEDIA_URL}}/images/ingredients.jpg"/>
+										<div class="container">
+											<img class="book-image" src="{{MEDIA_URL}}/images/ingredients.jpg"/>
+										</div>
 									</div>
 									<div class="clear"></div>
 								</div>
