@@ -64,7 +64,7 @@ body{
 
 .body-content{
 	position: relative;
-	min-height: 80%;
+	min-height: 50%;
 }
 
 #recipe-item{
