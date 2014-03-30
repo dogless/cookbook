@@ -95,6 +95,7 @@ body{
 }
 
 .recipe-card{
+	position:relative;
 	height: 300px;
 	width: 250px;
 	border-radius:5px;
@@ -102,10 +103,27 @@ body{
 	background-color: rgb(56, 56, 56);
 }
 
-.active div{
+.recipe-card-image{
+	position: relative;
+	height: 200px;
+	width: 100%;
+}
+
+.recipe-card-name{
+	position:relative;
+	height: 50px;
+	width: 100%;
+}
+
+.text-bottom{
+	position:absolute;
+	bottom:-25px; left: 0; right: 0;
+}
+
+.active > div{
 	border-color:rgb(241, 93, 88);
 	border-style:solid;
-	border-width:5px;
+	border-width: 5px;
 }
 
 #footer{
