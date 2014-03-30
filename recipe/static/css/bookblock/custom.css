@@ -1,8 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-div.box { background: #EEE; height: 100px; width: 1100px; margin:0 auto;}
-div.div1{background: #999; float: left; height: 100%; width: 550px; }
-div.div2{ background: #666; height: 100%; }
+ul li{ font-size:24px;}
+div.box {/* background: #EEE; */height: 100px; width: 1100px; margin:0 auto;}
+div.div1{/* background: #999; */float: left; height: 100%; width: 550px; }
+div.div2{/* background: #666; */height: 100%; }
+div.div2 img{
+	display:block;
+	margin: auto;
+}
 div.clear { clear: both; height: 1px; overflow: hidden; font-size:0pt; margin-top: -1px; }
 
 html { height: 100%; }
