@@ -52,7 +52,7 @@ MIDDLEWARE_CLASSES = (
 
 DEFAULT_FILE_STORAGE = 'recipe.s3utils.MediaRootS3BotoStorage'
 
-AWS_STORAGE_BUCKET_NAME = os.getenv('S3_BUCKET')
+AWS_STORAGE_BUCKET_NAME = 'phcookbook-assets'
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') 
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID') 
 
