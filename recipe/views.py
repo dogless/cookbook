@@ -25,9 +25,11 @@ def search(request):
 def recipe(request, number):
 	recipe = Recipe.objects.get(id=number)
 	steps = recipe.step_set.all()
+	ingredients = recipe.ingredient_set.all()
 
 	context = {
 		'recipe': recipe,
 		'steps': steps,
+		'ingredients': ingredients,
 	}
 	return render(request, 'recipe/recipe.html', context)
