@@ -102,7 +102,7 @@ body{
 	position:relative;
 	height: 300px;
 	width: 250px;
-	border-radius:5px;
+	border-radius: 5px;
 	margin: 10px;
 	background-color: rgb(56, 56, 56);
 }
@@ -130,9 +130,9 @@ body{
 }
 
 .active > div{
-	border-color:rgb(241, 93, 88);
-	border-style:solid;
-	border-width: 5px;
+	box-shadow: 0 0 30px rgb(241, 93, 88);
+    -webkit-box-shadow: 0 0 40px rgb(241, 93, 88); 
+    -moz-box-shadow: 0 0 30px rgb(241, 93, 88);
 }
 
 #footer{
