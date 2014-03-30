@@ -90,6 +90,10 @@ body{
 	width:90%;
 }
 
+#recipes li{
+	width:20%;
+}
+
 #recipes li p {
 	color: white;
 }
