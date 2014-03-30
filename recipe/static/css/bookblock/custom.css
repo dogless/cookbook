@@ -46,7 +46,7 @@ div.clear {
 	height: 500px; 
 	width: 500px;
 	margin-top: -25px;
-	margin-left: 100px;
+	margin-left: 150px;
 	-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 	-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 	box-shadow: 1px 2px 3px rgba(0,0,0,.5);
@@ -304,7 +304,7 @@ a:hover {
 	line-height: 2;
 	font-weight: 300;
 	padding: 5px 8%;
-	padding-left: 50px;
+	padding-left: 30px;
 	text-align: left;
 }
 
