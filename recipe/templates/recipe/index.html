@@ -31,7 +31,7 @@ Cookbook
 					<div class="text-center recipe-card container">
 						<div class="recipe-card-image">
 							{% if recipe.avatar %}
-								<img src="{{MEDIA_URL}}{{recipe.avatar}}"/>
+								<img src="{{recipe.avatar.url}}"/>
 							{% endif %}
 							</div>
 						<div class="recipe-card-name">
