@@ -31,7 +31,7 @@ Cookbook
 					<div class="text-center recipe-card">
 						<div class="recipe-card-image-container">
 							{% if recipe.avatar %}
-								<img class="recipe-card-image" src="{{recipe.avatar.url}}"/>
+								<a href="/recipe/{{ recipe.id }}"><img class="recipe-card-image" src="{{recipe.avatar.url}}"/></a>
 							{% endif %}
 							</div>
 						<div class="recipe-card-name">
