@@ -4,9 +4,11 @@ Whether you're flipping pancakes for brunch, or preparing a lavish steak dinner,
 
 Note
 ====
-- Swipe left/right to navigate page
+- Draw circle to scroll down
+- Swipe left/right to navigate recipe cards
 - Tap finger towards screen to select recipe
 - Swipe left/right to navigate cookbook!
+- Swipe up to go back
 
 ![alt text](images/1.png "Home Page")
 
