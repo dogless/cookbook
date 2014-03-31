@@ -140,7 +140,7 @@ Leap.loop(controllerOptions, function(frame) {
 		switch (gesture.type) {
 			case "circle":
 			console.log('circle');
-			if(gesture.state === 'stop'){
+			if(gesture.state === 'start'){
 				$('html, body').animate({
 					scrollTop: $('.active').offset().top-100
 				});
@@ -149,32 +149,32 @@ Leap.loop(controllerOptions, function(frame) {
 			case "swipe":
 			var xDirection = Math.abs(gesture.direction[0]);
 			var yDirection = Math.abs(gesture.direction[1]);
-			if(gesture.state === 'stop'){
-			if (xDirection > 0.5){
-				if(gesture.direction[0] > 0){
-					console.log('right');
-					moveActiveRight();
+			if(gesture.state === 'start'){
+				if (xDirection > 0.5){
+					if(gesture.direction[0] > 0){
+						console.log('right');
+						moveActiveRight();
+						break;
+					}
+					else{
+						console.log('left');
+						moveActiveLeft();
+						break;
+					}
+				}
+				if (yDirection > 0.5){
+					if(gesture.direction[1] > 0){
+						console.log('up');
+						moveActiveUp();
+						parent.history.back();
+						break;
+					}
+					else{
+					console.log('down');
+					moveActiveDown();
 					break;
+					}
 				}
-				else{
-					console.log('left');
-					moveActiveLeft();
-					break;
-				}
-			}
-			if (yDirection > 0.5){
-				if(gesture.direction[1] > 0){
-					console.log('up');
-					moveActiveUp();
-					parent.history.back();
-					break;
-				}
-				else{
-				console.log('down');
-				moveActiveDown();
-				break;
-				}
-			}
 			}
 			break;
 		case "screenTap":
